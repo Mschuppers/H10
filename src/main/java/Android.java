@@ -1,5 +1,5 @@
 public class Android extends Human implements Chargable {
-    int chargeLevel = 0;
+    int chargeLevel = 1;
 
     @Override
     String greet() {
@@ -13,7 +13,9 @@ public class Android extends Human implements Chargable {
 
         while (chargeLevel < 100) {
             chargeLevel += amount;
-            System.out.println("Charging, currently at " +chargeLevel+ "%");
+            if (chargeLevel > 100){
+                chargeLevel=100;
+            }
         }
         return chargeLevel;
     }
